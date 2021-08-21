@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Book Pro</title>
 
-    <!-- extarnal css link -->
-    <link rel="stylesheet" href="css/style.css">
-
     <!-- Bootstrap Css Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -23,51 +20,84 @@
     </header>
     <!-- header ended -->
 
-    <!-- main started -->
+    <!-- main section started -->
     <main>
         <!-- section started -->
         <section class="container d-flex my-5">
+
+            <!-- display left side started -->
             <div class="mx-5">
                 <img src="images/mac.png" alt="" width="400px">
             </div>
+            <!-- display left side ended -->
+
+            <!-- display right side started -->
             <div>
-                <h2>Customize your Blue 24-inch iMac with Apple M1 chip.</h2>
-                <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core CPU, and
-                    16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/USB 4 ports Magic Mouse
-                    Magic Keyboard-Us English</p>
+                <!-- title & about this product started -->
                 <div>
+                    <h2>Customize your Blue 24-inch iMac with Apple M1 chip.</h2>
+                    <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core CPU, and
+                        16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/USB 4 ports Magic
+                        Mouse
+                        Magic Keyboard-Us English</p>
+                </div>
+                <!-- title & about this product ended -->
+
+                <div>
+                    <!-- memory button started -->
                     <h4 class="mt-5">Memory</h4>
                     <button id="8gb-button" type="button" class="btn btn-outline-dark">8GB unified memory</button>
                     <button id="16gb-button" type="button" class="btn btn-outline-dark">16GB unified memory</button>
+                    <!-- memory button ended -->
+
+                    <!-- storage button started -->
                     <h4 class="mt-5">Storage</h4>
                     <button id="256gb-button" type="button" class="btn btn-outline-dark">256GB SSD storage</button>
                     <button id="512gb-button" type="button" class="btn btn-outline-dark">512GB SSD storage</button>
                     <button id="1tb-button" type="button" class="btn btn-outline-dark">1TB SSD storage</button>
+                    <!-- storage button ended -->
+
+                    <!-- choose button started -->
                     <h4 class="mt-5">Choose your delivery option</h4>
-                    <button id="25th-button" type="button" class="btn btn-outline-dark">Wednesday, Aug 25 FREE Prime
-                        Delivery</button>
-                    <button id="21th-button" type="button" class="btn btn-outline-dark">Saturday, Aug 21 Delivery charge
-                        $20</button>
+                    <button id="prime-delivery-button" type="button" class="btn btn-outline-dark">Wednesday, Aug 25 FREE
+                        Prime Delivery</button>
+                    <button id="delivery-charge-button" type="button" class="btn btn-outline-dark">Saturday, Aug 21
+                        Delivery charge $20</button>
+                    <!-- choose button ended -->
                 </div>
                 <div class="mt-5">
-                    <h4>Best Price $<span id="best-price">1299</span></h4>
-                    <hr width="300px">
-                    <h4>Extra Memory Cost $<span id="memory-cost">0</span></h4>
-                    <hr width="300px">
-                    <h4>Extra Storage Cost $<span id="storage-cost">0</span></h4>
-                    <hr width="300px">
-                    <h4>Delivery charge $<span id="delivery-charge">0</span></h4>
-                    <hr class="border-bottom border border-5" width="300px">
-                    <h4>Total Price $<span id="total-price">1299</span></h4>
-                    <p class="mb-0 mt-5">Add Pomo code</p>
-                    <input type="text" name="" id="input-field">
-                    <button type="button" class="btn btn-danger" id="apply">Apply</button>
+                    <!-- balance amount started -->
+                    <h4 class="w-50">Best Price <span class="float-end">$<span id="best-price">1299</span></span>
+                    </h4>
+                    <hr class="border border-1" width="400px">
+                    <h4 class="w-50">Extra Memory Cost <span class="float-end" class="float-end">$<span
+                                id="memory-cost">0</span></span></h4>
+                    <hr class="border border-1" width="400px">
+                    <h4 class="w-50">Extra Storage Cost <span class="float-end">$<span id="storage-cost">0</span></span>
+                    </h4>
+                    <hr class="border border-1" width="400px">
+                    <h4 class="w-50">Delivery charge <span class="float-end">$<span id="delivery-charge">0</span></span>
+                    </h4>
+                    <b>
+                        <hr width="400px">
+                    </b>
+                    <h4 class="w-50">Total Price <span class="float-end">$<span id="total-price">1299</span></span></h4>
+                    <hr class="border border-1" width="400px">
+                    <!-- balance amount ended -->
+
+                    <!-- pomo code started -->
+                    <p class="mb-0 mt-5 fs-5">Add Pomo code</p>
+                    <input type="text" name="" id="input-field" placeholder="enter your pomo code">
+                    <button type="button" class="btn btn-danger" id="apply-button">Apply</button>
+                    <!-- pomo code ended -->
                 </div>
             </div>
+            <!-- display right side ended -->
+
         </section>
         <!-- section ended -->
     </main>
-    <!-- main ended -->
+    <!-- main section ended -->
 
     <!-- footer started -->
     <footer>

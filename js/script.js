@@ -1,25 +1,25 @@
-// product cost function
+// apply product price related function
 function getProductCost(product, isIncresing) {
     const productCost = document.getElementById(product + '-cost');
     let productCostPrice = parseFloat(productCost.innerText);
-    if (isIncresing == false) {
-        productCostPrice = 0;
+    if (isIncresing == true) {
+        productCostPrice = 180;
     }
     else if (isIncresing == '512gb') {
         productCostPrice = 100;
     }
     else {
-        productCostPrice = 180;
+        productCostPrice = 0;
     }
     productCost.innerText = productCostPrice;
     getTotalPrice();
 };
 
-// delivery cost function
+// apply delivery cost related function
 function getDeliveryCost(delivery, date) {
     const deliveryCharge = document.getElementById(delivery);
     let deliveryChargeCost = parseFloat(deliveryCharge.innerText);
-    if (date == '25th') {
+    if (date == 'noCharge') {
         deliveryChargeCost = 0;
     }
     else {
@@ -29,7 +29,7 @@ function getDeliveryCost(delivery, date) {
     getTotalPrice();
 };
 
-// total price function
+//apply total price related function
 function getTotalPrice() {
     const bestCostPrice = document.getElementById('best-price').innerText;
     const memoryCostPrice = document.getElementById('memory-cost').innerText;
@@ -41,19 +41,22 @@ function getTotalPrice() {
     const deliveryCharge = parseFloat(deliveryChargePrice);
     const totalAmount = bestPrice + memoryCost + storageCost + deliveryCharge;
     document.getElementById('total-price').innerText = totalAmount;
-    // return totalAmount;
-}
+    document.getElementById('net-amount').innerText = totalAmount;
+};
 
-// discount price function
+// apply discount price related function
 function getDiscountPrice() {
     const totalPrice = parseFloat(document.getElementById('total-price').innerText);
-    const netAmount = parseFloat(document.getElementById('net-amount').innerText);
-    const discount = totalPrice / 20;
-    netAmount = totalPrice - discount;
-    document.getElementById('net-amount').innerText = netAmount;
-    console.log('00000000000000000')
-}
+    const inputField = document.getElementById('input-field').value;
+    if (inputField == "stevekaku") {
+        const discount = (totalPrice * 20) / 100;
+        const total = totalPrice - discount;
+        document.getElementById('net-amount').innerText = total;
+    }
+};
 
+
+// memory clicked hendler
 document.getElementById("8gb-button").addEventListener('click', function () {
     getProductCost('memory', false);
 });
@@ -62,6 +65,8 @@ document.getElementById("16gb-button").addEventListener('click', function () {
     getProductCost('memory', true);
 });
 
+
+// storage clicked hendler
 document.getElementById("256gb-button").addEventListener('click', function () {
     getProductCost('storage', false);
 });
@@ -74,14 +79,18 @@ document.getElementById("1tb-button").addEventListener('click', function () {
     getProductCost('storage', true);
 });
 
-document.getElementById("25th-button").addEventListener('click', function () {
-    getDeliveryCost('delivery-charge', '25th');
+
+// delivery clicked hendler
+document.getElementById("prime-delivery-button").addEventListener('click', function () {
+    getDeliveryCost('delivery-charge', 'noCharge');
 });
 
-document.getElementById("21th-button").addEventListener('click', function () {
-    getDeliveryCost('delivery-charge', '21th');
+document.getElementById("delivery-charge-button").addEventListener('click', function () {
+    getDeliveryCost('delivery-charge', 'Charge');
 });
 
-document.getElementById("apply").addEventListener('click', function () {
+
+// pomo apply clicked hendler
+document.getElementById("apply-button").addEventListener('click', function () {
     getDiscountPrice();
 });
